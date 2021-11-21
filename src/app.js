@@ -8,7 +8,7 @@ const { send } = require('process')
 
 const app = express()
 
-
+const port = process.env.PORT || 3000
 const viewsPath = path.join(__dirname, '../template/views')
 const partialsPath = path.join(__dirname, '../template/partials')
 
@@ -96,6 +96,6 @@ app.use(express.static(path.join(__dirname, '../public/about.html')))
 
 app.use(express.static(path.join(__dirname, '../public/help.html')))
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
